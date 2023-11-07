@@ -60,6 +60,7 @@ async function run() {
       res.send(result)
     })
 
+    //update
     app.put("/jobs/:id", async (req, res) => {
       const id = req.params.id
       const query = {_id: new ObjectId(id) };
@@ -116,7 +117,13 @@ async function run() {
     // Applied jobs
 
     app.get("/appliedjobs", async(req,res)=>{
-      const result = await appliedjobscollection.find().toArray()
+      let query= {}
+        const category= req.query.job_category;
+        
+        if(category){
+            query.job_category = category
+        }
+      const result = await appliedjobscollection.find(query).toArray()
       res.send(result)
     })
 
