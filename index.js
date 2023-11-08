@@ -92,7 +92,7 @@ async function run() {
         query.email = email
       }
       if (title) {
-        query.job_title = titl
+        query.job_title = title
       }
 
       const cursor = jobscollection.find(query);
