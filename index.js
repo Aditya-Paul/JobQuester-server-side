@@ -9,7 +9,13 @@ const port = process.env.PORT || 3000;
 
 //middlewire
 app.use(cors({
-  origin: ['http://localhost:5173'],
+  origin: [
+    //'http://localhost:5173',
+    'https://clever-custard-7b76d3.netlify.app',
+    'https://jobquester-b526e.web.app',
+    'https://jobquester-b526e.firebaseapp.com',
+
+  ],
   credentials: true
 }))
 app.use(express.json())
@@ -62,8 +68,8 @@ async function run() {
       res
         .cookie('token', token, {
           httpOnly: true,
-          secure: false,
-          //sameSite: 'none', 
+          secure: true,
+          sameSite: 'none', 
         })
         .send({success: true})
     })
