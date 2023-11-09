@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000;
 //middlewire
 app.use(cors({
   origin: [
-    //'http://localhost:5173',
+    'http://localhost:5173',
     'https://clever-custard-7b76d3.netlify.app',
     'https://jobquester-b526e.web.app',
     'https://jobquester-b526e.firebaseapp.com',
