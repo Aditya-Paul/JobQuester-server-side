@@ -180,6 +180,13 @@ async function run() {
       let query = {}
       const category = req.query.job_category;
 
+      const email = req.query.email;
+      
+      if (email) {
+       
+        query.email = email
+      }
+
       if (category) {
         query.job_category = category
       }
