@@ -186,7 +186,7 @@ async function run() {
        
         query.applicantEmail = applicantEmail
       }
-
+      //done
       if (category) {
         query.job_category = category
       }
